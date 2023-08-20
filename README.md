@@ -1,0 +1,2 @@
+# CSE Diary
+ FLUTTER + DJANGO
