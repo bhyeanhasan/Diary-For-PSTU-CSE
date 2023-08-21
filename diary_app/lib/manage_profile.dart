@@ -16,6 +16,8 @@ class _PostPageState extends State<PostPage> {
   final TextEditingController _registrationController = TextEditingController();
   final TextEditingController _blood_groupController = TextEditingController();
 
+
+
   Future<dynamic> fetchData() async {
     final storage = FlutterSecureStorage();
     final token = await storage.read(key: 'auth_token');
@@ -79,6 +81,8 @@ class _PostPageState extends State<PostPage> {
         future: fetchData(),
         builder: (context, snapshot) {
           final instanceData = snapshot.data;
+
+
 
           _nameController.text = instanceData['name'];
           _emailController.text = instanceData['email'];

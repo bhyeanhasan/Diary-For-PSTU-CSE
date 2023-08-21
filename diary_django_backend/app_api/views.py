@@ -38,7 +38,13 @@ class UserView(APIView):
 @permission_classes([IsAuthenticated])
 def get_user_profile(request):
     try:
-        print(request.user.pk)
+        profile = Profile.objects.get(owner=request.user.pk)
+    except:
+        profile = Profile()
+        profile.owner = request.user
+        profile.save()
+
+    try:
         profile = Profile.objects.get(owner=request.user.pk)
         serializer = ProfileSerializer(profile)
         print(serializer.data)
@@ -76,7 +82,7 @@ class ManageAuth(APIView):
 
 class ManageProfile(APIView):
     permission_classes = [IsAuthenticated]
-    authentication_classes = [TokenAuthentication,SessionAuthentication]
+    authentication_classes = [TokenAuthentication, SessionAuthentication]
 
     def get(self, request):
         profile = Profile.objects.all()
@@ -94,8 +100,9 @@ class ManageProfile(APIView):
     def patch(self, request):
         data = request.data
         data['owner'] = request.user.pk
+        old_profile = Profile.objects.get(owner=request.user.pk)
         print(data)
-        serializer = ProfileSerializer(request.user.pk,data=data)
+        serializer = ProfileSerializer(old_profile, data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
