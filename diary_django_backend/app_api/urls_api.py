@@ -7,6 +7,7 @@ from app_api import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('user-profile/', views.get_user_profile),
     path('users/', views.UserView.as_view()),
     path('auth/', csrf_exempt(views.ManageAuth.as_view())),
     path('profile/', csrf_exempt(views.ManageProfile.as_view())),

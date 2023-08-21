@@ -17,8 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // Add a delay and navigate to the home page after the splash screen is shown
     Timer(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-            builder: (BuildContext context) => LoginPage()),
+        MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
       );
     });
   }

@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'homepage.dart';
 import 'dart:convert';
 import 'splash_screen.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -39,6 +40,11 @@ class _LoginFormState extends State<LoginForm> {
       );
 
       if (response.statusCode == 200) {
+        final storage = FlutterSecureStorage();
+        final tokenMap = json.decode(response.body);
+        final token = tokenMap['token'];
+        await storage.write(key: 'auth_token', value: token);
+        // final token = await storage.read(key: 'auth_token');
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomePage()));
       } else {

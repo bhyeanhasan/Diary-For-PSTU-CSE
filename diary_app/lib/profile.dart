@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'profile.dart';
-import 'manage_profile.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class HomePage extends StatelessWidget {
-  Future<List<dynamic>> fetchData() async {
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  Future<dynamic> fetchData() async {
     final storage = FlutterSecureStorage();
     final token = await storage.read(key: 'auth_token');
     final headers = {
       'Authorization': 'Token $token',
     };
+
     final response = await http.get(
-      Uri.parse('http://192.168.0.105:8000/profile/'),
+      Uri.parse('http://192.168.0.105:8000/user-profile/'),
       headers: headers,
     );
+
     if (response.statusCode == 200) {
       return json.decode(response.body);
     } else {
@@ -28,15 +30,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("CSE DIARY"),
+        title: const Text("Profile Setting"),
         actions: <Widget>[
-          const Text("Profile"),
           IconButton(
-            icon: const Icon(Icons.account_circle),
-            tooltip: 'Profile Icon',
+            icon: const Icon(Icons.arrow_back),
+            tooltip: 'Comment Icon',
             onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => PostPage()));
+              Navigator.pop(context);
             },
           ),
         ],
@@ -49,25 +49,20 @@ class HomePage extends StatelessWidget {
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      body: FutureBuilder<List<dynamic>>(
+      body: FutureBuilder<dynamic>(
         future: fetchData(),
         builder: (context, snapshot) {
+          final instanceData = snapshot.data;
           if (snapshot.hasData) {
             // Data fetched successfully, display it
-            List<dynamic> data = snapshot.data!;
-            return ListView.builder(
-              itemCount: data.length,
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Text("Name " + data[index]['name']),
-                    Text("Email " + data[index]['email']),
-                    Text("ID " + data[index]['pstu_id']),
-                    Text("Registration " + data[index]['registration']),
-                    Text("Blood Group " + data[index]['blood_group']),
-                  ],
-                );
-              },
+            return Column(
+              children: [
+                Text("Name " + instanceData['name']),
+                Text("Email " + instanceData['email']),
+                Text("ID " + instanceData['pstu_id']),
+                Text("Registration " + instanceData['registration']),
+                Text("Blood Group " + instanceData['blood_group']),
+              ],
             );
           } else if (snapshot.hasError) {
             // Error occurred while fetching data
