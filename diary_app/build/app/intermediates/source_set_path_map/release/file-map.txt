@@ -1,0 +1,16 @@
+com.example.diary_app-jetified-window-1.0.0-beta04-0 C:\Users\bhyea\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\res
+com.example.diary_app-jetified-annotation-experimental-1.3.0-1 C:\Users\bhyea\.gradle\caches\transforms-3\937d6edc8055f6701a18eeac1a67afe6\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.diary_app-lifecycle-runtime-2.3.1-2 C:\Users\bhyea\.gradle\caches\transforms-3\9a249567dcb8025899915ed9a2426636\transformed\lifecycle-runtime-2.3.1\res
+com.example.diary_app-jetified-window-java-1.0.0-beta04-3 C:\Users\bhyea\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.diary_app-jetified-security-crypto-1.1.0-alpha04-4 C:\Users\bhyea\.gradle\caches\transforms-3\b08fac1db78e2ffe83daac0315fc754d\transformed\jetified-security-crypto-1.1.0-alpha04\res
+com.example.diary_app-core-1.10.1-5 C:\Users\bhyea\.gradle\caches\transforms-3\c4988ff80110f75080a936fc6f044848\transformed\core-1.10.1\res
+com.example.diary_app-main-6 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\android\app\src\main\res
+com.example.diary_app-release-7 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\android\app\src\release\res
+com.example.diary_app-pngs-8 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\app\generated\res\pngs\release
+com.example.diary_app-resValues-9 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\app\generated\res\resValues\release
+com.example.diary_app-rs-10 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\app\generated\res\rs\release
+com.example.diary_app-mergeReleaseResources-11 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\app\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.example.diary_app-mergeReleaseResources-12 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\app\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.example.diary_app-merged_res-13 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\app\intermediates\merged_res\release
+com.example.diary_app-packaged_res-14 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\flutter_secure_storage\intermediates\packaged_res\release
+com.example.diary_app-packaged_res-15 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\url_launcher_android\intermediates\packaged_res\release

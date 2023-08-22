@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/drawable/notification_icon_background.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/drawable/notification_bg.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/drawable/notification_bg_low.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/drawable/notification_tile_bg.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/drawable/notification_tile_bg.xml"
+    }
+]

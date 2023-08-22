@@ -1,0 +1,13 @@
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-jetified-window-1.0.0-beta04-0 C:\Users\bhyea\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-jetified-annotation-experimental-1.1.0-1 C:\Users\bhyea\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2 C:\Users\bhyea\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-jetified-window-java-1.0.0-beta04-3 C:\Users\bhyea\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-jetified-security-crypto-1.1.0-alpha04-4 C:\Users\bhyea\.gradle\caches\transforms-3\b08fac1db78e2ffe83daac0315fc754d\transformed\jetified-security-crypto-1.1.0-alpha04\res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-main-5 C:\Users\bhyea\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_secure_storage-8.0.0\android\src\main\res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-release-6 C:\Users\bhyea\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_secure_storage-8.0.0\android\src\release\res
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-pngs-7 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\flutter_secure_storage\generated\res\pngs\release
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-resValues-8 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\flutter_secure_storage\generated\res\resValues\release
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-rs-9 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\flutter_secure_storage\generated\res\rs\release
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-mergeReleaseResources-10 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\flutter_secure_storage\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-mergeReleaseResources-11 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\flutter_secure_storage\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-12 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\flutter_secure_storage\intermediates\merged_res\release

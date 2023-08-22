@@ -1,0 +1,13 @@
+io.flutter.plugins.urllauncher.url_launcher_android-jetified-window-1.0.0-beta04-0 C:\Users\bhyea\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\res
+io.flutter.plugins.urllauncher.url_launcher_android-jetified-annotation-experimental-1.3.0-1 C:\Users\bhyea\.gradle\caches\transforms-3\937d6edc8055f6701a18eeac1a67afe6\transformed\jetified-annotation-experimental-1.3.0\res
+io.flutter.plugins.urllauncher.url_launcher_android-lifecycle-runtime-2.3.1-2 C:\Users\bhyea\.gradle\caches\transforms-3\9a249567dcb8025899915ed9a2426636\transformed\lifecycle-runtime-2.3.1\res
+io.flutter.plugins.urllauncher.url_launcher_android-jetified-window-java-1.0.0-beta04-3 C:\Users\bhyea\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
+io.flutter.plugins.urllauncher.url_launcher_android-core-1.10.1-4 C:\Users\bhyea\.gradle\caches\transforms-3\c4988ff80110f75080a936fc6f044848\transformed\core-1.10.1\res
+io.flutter.plugins.urllauncher.url_launcher_android-main-5 C:\Users\bhyea\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.0.38\android\src\main\res
+io.flutter.plugins.urllauncher.url_launcher_android-release-6 C:\Users\bhyea\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.0.38\android\src\release\res
+io.flutter.plugins.urllauncher.url_launcher_android-pngs-7 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\url_launcher_android\generated\res\pngs\release
+io.flutter.plugins.urllauncher.url_launcher_android-resValues-8 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\url_launcher_android\generated\res\resValues\release
+io.flutter.plugins.urllauncher.url_launcher_android-rs-9 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\url_launcher_android\generated\res\rs\release
+io.flutter.plugins.urllauncher.url_launcher_android-mergeReleaseResources-10 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\url_launcher_android\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.urllauncher.url_launcher_android-mergeReleaseResources-11 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\url_launcher_android\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.urllauncher.url_launcher_android-merged_res-12 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\url_launcher_android\intermediates\merged_res\release

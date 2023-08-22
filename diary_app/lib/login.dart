@@ -30,7 +30,7 @@ class _LoginFormState extends State<LoginForm> {
       final String username = _usernameController.text;
       final String password = _passwordController.text;
 
-      const String apiUrl = 'http://192.168.0.105:8000/auth/';
+      const String apiUrl = 'https://appcse16.pythonanywhere.com/auth/';
 
       var response = await http.post(
         Uri.parse(apiUrl),
@@ -56,7 +56,7 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   void _logout() async {
-    const String apiUrl = 'http://192.168.0.105:8000/auth/';
+    const String apiUrl = 'https://appcse16.pythonanywhere.com/auth/';
 
     final response = await http.get(
       Uri.parse(apiUrl),

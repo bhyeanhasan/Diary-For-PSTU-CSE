@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout-v21/notification_action.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout-v21/notification_template_custom_big.xml"
+    }
+]

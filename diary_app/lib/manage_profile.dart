@@ -28,7 +28,7 @@ class _PostPageState extends State<PostPage> {
     };
 
     final response = await http.get(
-      Uri.parse('http://192.168.0.105:8000/user-profile/'),
+      Uri.parse('https://appcse16.pythonanywhere.com/user-profile/'),
       headers: headers,
     );
 
@@ -41,7 +41,7 @@ class _PostPageState extends State<PostPage> {
   }
 
   Future<void> updateProfile() async {
-    final apiUrl = 'http://192.168.0.105:8000/profile/';
+    final apiUrl = 'https://appcse16.pythonanywhere.com/profile/';
 
     final updatedProfile = {
       'name': _nameController.text,

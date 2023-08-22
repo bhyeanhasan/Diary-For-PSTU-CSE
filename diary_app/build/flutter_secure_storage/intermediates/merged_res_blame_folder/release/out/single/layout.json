@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout/notification_template_part_time.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout/custom_dialog.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout/notification_action_tombstone.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout/notification_template_part_chronometer.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout/notification_template_icon_group.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-merged_res-11:/layout/notification_action.xml",
+        "source": "com.it_nomads.fluttersecurestorage.flutter_secure_storage-core-1.6.0-2:/layout/notification_action.xml"
+    }
+]

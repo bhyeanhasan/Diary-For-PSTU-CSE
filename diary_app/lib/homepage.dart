@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'dart:convert';
-import 'profile.dart';
 import 'manage_profile.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,7 +19,7 @@ class _HomePageState extends State<HomePage> {
       'Authorization': 'Token $token',
     };
     final response = await http.get(
-      Uri.parse('http://192.168.0.105:8000/profile/'),
+      Uri.parse('https://appcse16.pythonanywhere.com/profile/'),
       headers: headers,
     );
     if (response.statusCode == 200) {
