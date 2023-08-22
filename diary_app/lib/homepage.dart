@@ -6,7 +6,12 @@ import 'profile.dart';
 import 'manage_profile.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   Future<List<dynamic>> fetchData() async {
     final storage = FlutterSecureStorage();
     final token = await storage.read(key: 'auth_token');
@@ -42,12 +47,46 @@ class HomePage extends StatelessWidget {
         ],
         backgroundColor: Colors.pinkAccent[200],
         elevation: 50.0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          tooltip: 'Menu Icon',
-          onPressed: () {},
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.menu),
+        //   tooltip: 'Menu Icon',
+        //   onPressed: () { },
+        // ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.pinkAccent[200],
+              ),
+              child: Text(
+                'Menu',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Profile'),
+              onTap: () {
+                // Add your logic for Button 1 here
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PostPage()));
+              },
+            ),
+            ListTile(
+              title: Text('Logout'),
+              onTap: () {
+                // Add your logic for Button 2 here
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              },
+            ),
+          ],
+        ),
       ),
       body: FutureBuilder<List<dynamic>>(
         future: fetchData(),

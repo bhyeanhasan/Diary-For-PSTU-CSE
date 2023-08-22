@@ -16,8 +16,6 @@ class _PostPageState extends State<PostPage> {
   final TextEditingController _registrationController = TextEditingController();
   final TextEditingController _blood_groupController = TextEditingController();
 
-
-
   Future<dynamic> fetchData() async {
     final storage = FlutterSecureStorage();
     final token = await storage.read(key: 'auth_token');
@@ -75,14 +73,30 @@ class _PostPageState extends State<PostPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Post'),
+        title: const Text("Profile Setting"),
+        actions: <Widget>[
+          Text("Logout"),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Comment Icon',
+            onPressed: () {
+              Navigator.of(context).popUntil((route) => route.isFirst);
+            },
+          ),
+        ],
+        backgroundColor: Colors.pinkAccent[200],
+        elevation: 50.0,
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          tooltip: 'Menu Icon',
+          onPressed: () {},
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: FutureBuilder<dynamic>(
         future: fetchData(),
         builder: (context, snapshot) {
           final instanceData = snapshot.data;
-
-
 
           _nameController.text = instanceData['name'];
           _emailController.text = instanceData['email'];

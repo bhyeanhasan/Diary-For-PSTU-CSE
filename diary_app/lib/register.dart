@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'homepage.dart';
-import 'register.dart';
 import 'dart:convert';
+import 'login.dart';
 import 'splash_screen.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: LoginForm(),
+      body: RegisterForm(),
     );
   }
 }
 
-class LoginForm extends StatefulWidget {
+class RegisterForm extends StatefulWidget {
   @override
-  _LoginFormState createState() => _LoginFormState();
+  _RegisterFormState createState() => _RegisterFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -30,7 +30,7 @@ class _LoginFormState extends State<LoginForm> {
       final String username = _usernameController.text;
       final String password = _passwordController.text;
 
-      const String apiUrl = 'http://192.168.0.105:8000/auth/';
+      const String apiUrl = 'http://192.168.0.105:8000/users/';
 
       var response = await http.post(
         Uri.parse(apiUrl),
@@ -39,36 +39,15 @@ class _LoginFormState extends State<LoginForm> {
             <String, String>{'username': username, 'password': password}),
       );
 
-      if (response.statusCode == 200) {
-        final storage = FlutterSecureStorage();
-        final tokenMap = json.decode(response.body);
-        final token = tokenMap['token'];
-        await storage.write(key: 'auth_token', value: token);
-        // final token = await storage.read(key: 'auth_token');
+      if (response.statusCode == 201) {
+
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomePage()));
+            context, MaterialPageRoute(builder: (context) => LoginPage()));
       } else {
         print(response.statusCode);
       }
 
       print(response);
-    }
-  }
-
-  void _logout() async {
-    const String apiUrl = 'http://192.168.0.105:8000/auth/';
-
-    final response = await http.get(
-      Uri.parse(apiUrl),
-    );
-
-    print(response);
-
-    if (response.statusCode == 200) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => SplashScreen()));
-    } else {
-      print(response.statusCode);
     }
   }
 
@@ -101,14 +80,6 @@ class _LoginFormState extends State<LoginForm> {
           ),
           ElevatedButton(
             onPressed: _submitForm,
-            child: Text('Login'),
-          ),
-          Text("Don't have an account?"),
-          TextButton(
-            onPressed: (){
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RegisterPage()));
-            },
             child: Text('Register'),
           ),
         ],

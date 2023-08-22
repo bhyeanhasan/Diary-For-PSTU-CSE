@@ -18,19 +18,21 @@ def home(request):
 
 
 class UserView(APIView):
-    permission_classes = [IsAuthenticated]
-
     def get(self, request):
         users = User.objects.all()
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        username = request.data.get('username')
+        password = request.data.get('password')
+
+        if User.objects.filter(username=username).exists():
+            return Response("username already exist", status=status.HTTP_406_NOT_ACCEPTABLE)
+
+        user = User.objects.create_user(username=username, password=password)
+        user.save()
+        return Response("user created", status=status.HTTP_201_CREATED)
 
 
 @api_view()
