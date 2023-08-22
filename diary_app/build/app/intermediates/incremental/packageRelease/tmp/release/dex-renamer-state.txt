@@ -1,4 +1,4 @@
-#Tue Aug 22 22:57:05 BDT 2023
+#Tue Aug 22 23:18:13 BDT 2023
 base.0=C\:\\Users\\bhyea\\Desktop\\CSE-Diary\\diary_app\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -160,11 +160,21 @@ class _HomePageState extends State<HomePage> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
+                                  Icon(Icons.bloodtype_outlined),
+                                  SizedBox(width: 8),
+                                  Text("Blood "+data[index]['blood_group']),
+                                ],
+                              ),
+                              SizedBox(height: 8),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
                                   Icon(Icons.location_on_outlined),
                                   SizedBox(width: 8),
                                   Text(data[index]['address']),
                                 ],
                               ),
+
                               SizedBox(height: 8),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -181,7 +191,8 @@ class _HomePageState extends State<HomePage> {
                                   Icon(Icons.call),
                                   SizedBox(width: 8),
                                   Text(data[index]['twitter']),
-                                  TextButton(
+                                  SizedBox(width: 8),
+                                  ElevatedButton(
                                       onPressed: () {
                                         launch(
                                             "tel://" + data[index]['twitter']);
