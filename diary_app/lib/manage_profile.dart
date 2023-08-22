@@ -15,6 +15,10 @@ class _PostPageState extends State<PostPage> {
   final TextEditingController _pstu_idController = TextEditingController();
   final TextEditingController _registrationController = TextEditingController();
   final TextEditingController _blood_groupController = TextEditingController();
+  final TextEditingController _addresspController = TextEditingController();
+  final TextEditingController _facebookController = TextEditingController();
+  final TextEditingController _twitterController = TextEditingController();
+  final TextEditingController _linkedinController = TextEditingController();
 
   Future<dynamic> fetchData() async {
     final storage = FlutterSecureStorage();
@@ -45,6 +49,10 @@ class _PostPageState extends State<PostPage> {
       'pstu_id': _pstu_idController.text,
       'registration': _registrationController.text,
       'blood_group': _blood_groupController.text,
+      'address': _addresspController.text,
+      'facebook': _facebookController.text,
+      'twitter': _twitterController.text,
+      'linkedin': _linkedinController.text,
     };
 
     final storage = FlutterSecureStorage();
@@ -87,9 +95,11 @@ class _PostPageState extends State<PostPage> {
         backgroundColor: Colors.pinkAccent[200],
         elevation: 50.0,
         leading: IconButton(
-          icon: const Icon(Icons.menu),
+          icon: const Icon(Icons.arrow_back),
           tooltip: 'Menu Icon',
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
@@ -103,40 +113,69 @@ class _PostPageState extends State<PostPage> {
           _pstu_idController.text = instanceData['pstu_id'];
           _registrationController.text = instanceData['registration'];
           _blood_groupController.text = instanceData['blood_group'];
+          _addresspController.text = instanceData['address'];
+          _facebookController.text = instanceData['facebook'];
+          _twitterController.text = instanceData['twitter'];
+          _linkedinController.text = instanceData['linkedin'];
 
           if (snapshot.hasData) {
             // Data fetched successfully, display it
-            return Column(
-              children: [
-                TextField(
-                  controller: _nameController,
-                  decoration: InputDecoration(
-                    labelText: 'Name',
+            return SingleChildScrollView(
+              child: Center(
+                child: Container(
+                  padding: EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      TextField(
+                        controller: _nameController,
+                        decoration: InputDecoration(
+                          labelText: 'Name',
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      TextField(
+                        controller: _emailController,
+                        decoration: InputDecoration(labelText: 'Email'),
+                      ),
+                      TextField(
+                        controller: _pstu_idController,
+                        decoration: InputDecoration(labelText: 'ID'),
+                      ),
+                      TextField(
+                        controller: _registrationController,
+                        decoration: InputDecoration(labelText: 'Registration'),
+                      ),
+                      TextField(
+                        controller: _blood_groupController,
+                        decoration: InputDecoration(labelText: 'Blood Group'),
+                      ),
+                      TextField(
+                        controller: _addresspController,
+                        decoration: InputDecoration(labelText: 'Address'),
+                      ),
+                      TextField(
+                        controller: _facebookController,
+                        decoration: InputDecoration(labelText: 'Facebook'),
+
+                      ),
+                      TextField(
+                        controller: _linkedinController,
+                        decoration: InputDecoration(labelText: 'LinkedIn'),
+                      ),
+                      TextField(
+                        controller: _twitterController,
+                        decoration: InputDecoration(labelText: 'Mobile'),
+                      ),
+
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: updateProfile,
+                        child: Text('Post Data'),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 10),
-                TextField(
-                  controller: _emailController,
-                  decoration: InputDecoration(labelText: 'Content'),
-                ),
-                TextField(
-                  controller: _pstu_idController,
-                  decoration: InputDecoration(labelText: 'Content'),
-                ),
-                TextField(
-                  controller: _registrationController,
-                  decoration: InputDecoration(labelText: 'Content'),
-                ),
-                TextField(
-                  controller: _blood_groupController,
-                  decoration: InputDecoration(labelText: 'Content'),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: updateProfile,
-                  child: Text('Post Data'),
-                ),
-              ],
+              ),
             );
           } else if (snapshot.hasError) {
             // Error occurred while fetching data

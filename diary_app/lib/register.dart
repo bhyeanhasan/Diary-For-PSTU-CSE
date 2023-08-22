@@ -55,34 +55,43 @@ class _RegisterFormState extends State<RegisterForm> {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: Column(
-        children: [
-          TextFormField(
-            controller: _usernameController,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Username is required';
-              }
-              return null;
-            },
-            decoration: InputDecoration(labelText: 'Username'),
+      child: Center(
+        child: Container(
+          padding: EdgeInsets.all(16.0),
+          width: double.infinity,
+          height: 300,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: _usernameController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Username is required';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(labelText: 'Username'),
+              ),
+              TextFormField(
+                controller: _passwordController,
+                obscureText: true,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Password is required';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(labelText: 'Password'),
+              ),
+              SizedBox(height: 20,),
+
+              ElevatedButton(
+                onPressed: _submitForm,
+                child: Text('Register'),
+              ),
+            ],
           ),
-          TextFormField(
-            controller: _passwordController,
-            obscureText: true,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Password is required';
-              }
-              return null;
-            },
-            decoration: InputDecoration(labelText: 'Password'),
-          ),
-          ElevatedButton(
-            onPressed: _submitForm,
-            child: Text('Register'),
-          ),
-        ],
+        ),
       ),
     );
   }

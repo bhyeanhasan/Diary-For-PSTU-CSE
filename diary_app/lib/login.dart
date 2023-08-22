@@ -76,42 +76,51 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: Column(
-        children: [
-          TextFormField(
-            controller: _usernameController,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Username is required';
-              }
-              return null;
-            },
-            decoration: InputDecoration(labelText: 'Username'),
+      child: Center(
+        child: Container(
+          padding: EdgeInsets.all(16.0),
+          width: double.infinity,
+          height: 300,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: _usernameController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Username is required';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(labelText: 'Username'),
+              ),
+              TextFormField(
+                controller: _passwordController,
+                obscureText: true,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Password is required';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(labelText: 'Password'),
+              ),
+              SizedBox(height: 16.0,),
+              ElevatedButton(
+                onPressed: _submitForm,
+                child: Text('Login'),
+              ),
+
+              const Text("Don't have an account?"),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => RegisterPage()));
+                },
+                child: const Text('Register'),
+              ),
+            ],
           ),
-          TextFormField(
-            controller: _passwordController,
-            obscureText: true,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Password is required';
-              }
-              return null;
-            },
-            decoration: InputDecoration(labelText: 'Password'),
-          ),
-          ElevatedButton(
-            onPressed: _submitForm,
-            child: Text('Login'),
-          ),
-          Text("Don't have an account?"),
-          TextButton(
-            onPressed: (){
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => RegisterPage()));
-            },
-            child: Text('Register'),
-          ),
-        ],
+        ),
       ),
     );
   }

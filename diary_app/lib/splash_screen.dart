@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'main.dart'; // Replace with the actual home page of your app
 import 'login.dart';
+import 'example.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
