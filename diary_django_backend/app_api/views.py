@@ -1,3 +1,4 @@
+from django.core.mail import send_mail
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 
@@ -44,6 +45,15 @@ def get_user_profile(request):
     except:
         profile = Profile()
         profile.owner = request.user
+        profile.name = "Not set"
+        profile.email = "not set"
+        profile.address = "not set"
+        profile.blood_group = "not set"
+        profile.pstu_id = "not set"
+        profile.registration = "not set"
+        profile.facebook = "not set"
+        profile.linkedin = "not set"
+        profile.twitter = "Not set"
         profile.save()
 
     try:
@@ -110,3 +120,14 @@ class ManageProfile(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+def mail_service(request):
+    send_mail(
+        "Subject here",
+        "Here is the message.",
+        "oboyob16.official@gmail.com",
+        ["bhyean@gmail.com"],
+        fail_silently=False,
+    )
+    return HttpResponse("Done", status=status.HTTP_200_OK)
