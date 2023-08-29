@@ -21,4 +21,7 @@ class ProfileSerializer(serializers.ModelSerializer):
                   "address",
                   "facebook",
                   "twitter",
-                  "linkedin"]
+                  "linkedin",
+                  "phone",
+                  "picture"
+                  ]

@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'manage_profile.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'my_widget/my_drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -54,40 +55,14 @@ class _HomePageState extends State<HomePage> {
         // ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.pinkAccent[200],
-              ),
-              child: const Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text('Profile'),
-              onTap: () {
-                // Add your logic for Button 1 here
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PostPage()));
-              },
-            ),
-            ListTile(
-              title: Text('Logout'),
-              onTap: () {
-                // Add your logic for Button 2 here
-                Navigator.of(context).popUntil((route) => route.isFirst);
-              },
-            ),
-          ],
-        ),
-      ),
+
+
+      drawer: MyDrawer(),
+
+
+
+
+
       body: FutureBuilder<List<dynamic>>(
         future: fetchData(),
         builder: (context, snapshot) {
@@ -98,15 +73,7 @@ class _HomePageState extends State<HomePage> {
               child: ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, index) {
-                  // return Column(
-                  //   children: [
-                  //     Text("Name " + data[index]['name']),
-                  //     Text("Email " + data[index]['email']),
-                  //     Text("ID " + data[index]['pstu_id']),
-                  //     Text("Registration " + data[index]['registration']),
-                  //     Text("Blood Group " + data[index]['blood_group']),
-                  //   ],
-                  // );
+
 
                   return Column(
                     children: [
@@ -149,20 +116,13 @@ class _HomePageState extends State<HomePage> {
                                   Text("REG: " + data[index]['registration']),
                                 ],
                               ),
-                              // Text(
-                              //   data[index]['pstu_id'],
-                              //   style: TextStyle(
-                              //     fontSize: 16,
-                              //     color: Colors.grey,
-                              //   ),
-                              // ),
                               SizedBox(height: 8),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.bloodtype_outlined),
                                   SizedBox(width: 8),
-                                  Text("Blood "+data[index]['blood_group']),
+                                  Text("Blood " + data[index]['blood_group']),
                                 ],
                               ),
                               SizedBox(height: 8),
@@ -209,9 +169,11 @@ class _HomePageState extends State<HomePage> {
                                   SizedBox(width: 8),
                                   TextButton(
                                       onPressed: () async {
-                                        final Uri url = Uri.parse('https://www.facebook.com/'+data[index]['facebook']);
+                                        final Uri url = Uri.parse(
+                                            'https://www.facebook.com/' +
+                                                data[index]['facebook']);
                                         if (!await launchUrl(url)) {
-                                        throw Exception('Could not launch');
+                                          throw Exception('Could not launch');
                                         }
                                       },
                                       child: Text("Facebook")),
@@ -220,7 +182,9 @@ class _HomePageState extends State<HomePage> {
                                   SizedBox(width: 8),
                                   TextButton(
                                       onPressed: () async {
-                                        final Uri url = Uri.parse('https://www.linkedin.com/in/'+data[index]['linkedin']);
+                                        final Uri url = Uri.parse(
+                                            'https://www.linkedin.com/in/' +
+                                                data[index]['linkedin']);
                                         if (!await launchUrl(url)) {
                                           throw Exception('Could not launch');
                                         }

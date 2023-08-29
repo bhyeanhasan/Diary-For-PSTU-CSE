@@ -44,16 +44,6 @@ def get_user_profile(request):
         profile = Profile.objects.get(owner=request.user.pk)
     except:
         profile = Profile()
-        profile.owner = request.user
-        profile.name = "Not set"
-        profile.email = "not set"
-        profile.address = "not set"
-        profile.blood_group = "not set"
-        profile.pstu_id = "not set"
-        profile.registration = "not set"
-        profile.facebook = "not set"
-        profile.linkedin = "not set"
-        profile.twitter = "Not set"
         profile.save()
 
     try:
@@ -122,12 +112,17 @@ class ManageProfile(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['POST'])
 def mail_service(request):
-    send_mail(
-        "Subject here",
-        "Here is the message.",
-        "oboyob16.official@gmail.com",
-        ["bhyean@gmail.com"],
-        fail_silently=False,
-    )
-    return HttpResponse("Done", status=status.HTTP_200_OK)
+    announcement = request.data.get('announcement')
+    try:
+        send_mail(
+            "CSE16 Announcement",
+            announcement,
+            "oboyob16.official@gmail.com",
+            ["bhyean@gmail.com"],
+            fail_silently=False,
+        )
+        return HttpResponse("Send", status=status.HTTP_200_OK)
+    except:
+        return HttpResponse("Not send", status=status.HTTP_400_BAD_REQUEST)

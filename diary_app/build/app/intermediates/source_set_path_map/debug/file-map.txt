@@ -13,4 +13,5 @@ com.example.diary_app-mergeDebugResources-11 C:\Users\bhyea\Desktop\CSE-Diary\di
 com.example.diary_app-mergeDebugResources-12 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
 com.example.diary_app-merged_res-13 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\app\intermediates\merged_res\debug
 com.example.diary_app-packaged_res-14 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\flutter_secure_storage\intermediates\packaged_res\debug
-com.example.diary_app-packaged_res-15 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\url_launcher_android\intermediates\packaged_res\debug
+com.example.diary_app-packaged_res-15 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\fluttertoast\intermediates\packaged_res\debug
+com.example.diary_app-packaged_res-16 C:\Users\bhyea\Desktop\CSE-Diary\diary_app\build\url_launcher_android\intermediates\packaged_res\debug

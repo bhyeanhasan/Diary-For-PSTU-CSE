@@ -5,6 +5,8 @@ import 'dart:convert';
 import 'login.dart';
 import 'splash_screen.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 class RegisterPage extends StatelessWidget {
   @override
@@ -40,11 +42,30 @@ class _RegisterFormState extends State<RegisterForm> {
       );
 
       if (response.statusCode == 201) {
+        Fluttertoast.showToast(
+            msg: "Successfully Created",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 2,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
 
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => LoginPage()));
       } else {
-        print(response.statusCode);
+
+        Fluttertoast.showToast(
+            msg: response.body,
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 2,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
+
       }
 
       print(response);

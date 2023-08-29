@@ -5,6 +5,7 @@ import 'register.dart';
 import 'dart:convert';
 import 'splash_screen.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -45,10 +46,26 @@ class _LoginFormState extends State<LoginForm> {
         final token = tokenMap['token'];
         await storage.write(key: 'auth_token', value: token);
         // final token = await storage.read(key: 'auth_token');
+
+        Fluttertoast.showToast(
+            msg: "Successfully logged in",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomePage()));
       } else {
-        print(response.statusCode);
+        Fluttertoast.showToast(
+            msg: "Please check your usernamepassword",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 2,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
       }
 
       print(response);
@@ -67,6 +84,15 @@ class _LoginFormState extends State<LoginForm> {
     if (response.statusCode == 200) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => SplashScreen()));
+
+      Fluttertoast.showToast(
+          msg: "Successfully logged out",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
     } else {
       print(response.statusCode);
     }
@@ -78,11 +104,18 @@ class _LoginFormState extends State<LoginForm> {
       key: _formKey,
       child: Center(
         child: Container(
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(20.0),
+          color: Colors.white,
           width: double.infinity,
-          height: 300,
+          height: 550,
           child: Column(
             children: [
+              Image.network(
+                'https://i.ibb.co/dpjYnbd/oboyob16.jpg',
+                width: 200,
+                height: 200,
+                fit: BoxFit.cover,
+              ),
               TextFormField(
                 controller: _usernameController,
                 validator: (value) {
@@ -104,12 +137,13 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 decoration: InputDecoration(labelText: 'Password'),
               ),
-              SizedBox(height: 16.0,),
+              SizedBox(
+                height: 16.0,
+              ),
               ElevatedButton(
                 onPressed: _submitForm,
                 child: Text('Login'),
               ),
-
               const Text("Don't have an account?"),
               TextButton(
                 onPressed: () {

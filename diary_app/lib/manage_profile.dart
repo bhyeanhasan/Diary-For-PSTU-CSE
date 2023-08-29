@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 class PostPage extends StatefulWidget {
   @override
@@ -41,7 +43,8 @@ class _PostPageState extends State<PostPage> {
   }
 
   Future<void> updateProfile() async {
-    final apiUrl = 'https://appcse16.pythonanywhere.com/profile/';
+
+    const apiUrl = 'https://appcse16.pythonanywhere.com/profile/';
 
     final updatedProfile = {
       'name': _nameController.text,
@@ -55,7 +58,7 @@ class _PostPageState extends State<PostPage> {
       'linkedin': _linkedinController.text,
     };
 
-    final storage = FlutterSecureStorage();
+    const storage = FlutterSecureStorage();
     final token = await storage.read(key: 'auth_token');
     final headers = {
       'Content-Type': 'application/json',
@@ -69,7 +72,16 @@ class _PostPageState extends State<PostPage> {
     );
 
     if (response.statusCode == 200) {
-      print('Profile updated successfully');
+      Fluttertoast.showToast(
+          msg: "Successfully updated your information",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 2,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0
+      );
+      Navigator.pop(context);
     } else {
       print('Failed to update profile');
       print('Status Code: ${response.statusCode}');
@@ -123,7 +135,7 @@ class _PostPageState extends State<PostPage> {
             return SingleChildScrollView(
               child: Center(
                 child: Container(
-                  padding: EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(25.0),
                   child: Column(
                     children: [
                       TextField(
@@ -178,13 +190,11 @@ class _PostPageState extends State<PostPage> {
               ),
             );
           } else if (snapshot.hasError) {
-            // Error occurred while fetching data
             return Center(
               child: Text('Error: ${snapshot.error}'),
             );
           }
-          // Data is being fetched
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         },
